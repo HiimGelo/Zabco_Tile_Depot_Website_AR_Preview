@@ -1,0 +1,12 @@
+:root, [data-bs-theme=light] {
+  --bs-body-color: #000;
+  --bs-body-color-rgb: 0,0,0;
+  --bs-secondary-color: rgba(0,0,0,0.75);
+  --bs-secondary-color-rgb: 0,0,0,0.75;
+  --bs-tertiary-color: rgba(0,0,0,0.5);
+  --bs-tertiary-color-rgb: 0,0,0,0.5;
+  --bs-body-bg: #f9f9f9;
+  --bs-body-bg-rgb: 249,249,249;
+  --bs-body-font-family: 'Courier Prime', monospace;
+}
+
