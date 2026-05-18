@@ -1,0 +1,221 @@
+/* ============================================================
+   TileCalculatorStyles.css — page content only
+   ============================================================ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #151616;
+  background: #f0f0f0;
+  overflow-x: hidden;
+}
+
+body {
+  padding-top: 120px;
+  line-height: 1.4;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ── Page wrapper ──────────────────────────────────────────── */
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 48px 28px 72px;
+}
+
+.container h1 {
+  font-size: clamp(24px, 5vw, 40px);
+  font-weight: 800;
+  color: #151616;
+  text-align: center;
+  margin-bottom: 36px;
+  letter-spacing: -0.4px;
+}
+
+/* ── Calculator card ───────────────────────────────────────── */
+.container1 {
+  background: #1e1e1e;
+  border-radius: 20px;
+  padding: 40px 36px;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.18);
+  border: 1px solid #2e2e2e;
+}
+
+/* ── Form controls ─────────────────────────────────────────── */
+.calc {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.control-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+.calc input[type="number"],
+.calc select {
+  padding: 11px 14px;
+  font-size: 15px;
+  background: #2a2a2a;
+  border: 1.5px solid #3a3a3a;
+  border-radius: 8px;
+  color: #fff;
+  font-family: inherit;
+  transition: border-color 0.2s, background 0.2s;
+  width: 100%;
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+/* Remove arrows (Chrome, Safari, Edge) */
+.calc input[type="number"]::-webkit-outer-spin-button,
+.calc input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.calc input[type="number"]:focus,
+.calc select:focus {
+  outline: none;
+  border-color: #ed8d1b;
+  background: #2f2f2f;
+}
+
+.calc select option { background: #2a2a2a; }
+
+.calc input::placeholder { color: #555; }
+
+/* ── OR divider ────────────────────────────────────────────── */
+.or-label {
+  text-align: center;
+  margin: 8px 0;
+}
+
+.or-label h2 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ed8d1b;
+}
+
+/* ── Product select (bootstrap override) ───────────────────── */
+.form-control {
+  padding: 11px 14px !important;
+  font-size: 15px !important;
+  background: #2a2a2a !important;
+  border: 1.5px solid #3a3a3a !important;
+  border-radius: 8px !important;
+  color: #fff !important;
+  font-family: inherit;
+  width: 100%;
+}
+
+.form-control:focus {
+  outline: none !important;
+  border-color: #ed8d1b !important;
+  box-shadow: none !important;
+  background: #2f2f2f !important;
+}
+
+/* ── Checkboxes ────────────────────────────────────────────── */
+.calc label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ccc;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.calc input[type="checkbox"] {
+  accent-color: #ed8d1b;
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Calculate button ──────────────────────────────────────── */
+.calc-btn {
+  margin-top: 8px;
+  padding: 13px 32px;
+  background: #ed8d1b;
+  color: #151616;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  letter-spacing: 0.4px;
+  width: 100%;
+}
+
+.calc-btn:hover { background: #c97415; }
+.calc-btn:active { transform: scale(0.98); }
+
+/* ── Result box ────────────────────────────────────────────── */
+.result {
+  margin-top: 24px;
+  padding: 22px 22px;
+  border-radius: 12px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.result.ok {
+  background: #1a3320;
+  border: 1.5px solid #2e5e3e;
+  color: #a0e8b0;
+}
+
+.result.error {
+  background: #3a1a1a;
+  border: 1.5px solid #6e2e2e;
+  color: #f0a0a0;
+}
+
+.result p { margin-bottom: 6px; }
+.result p:last-child { margin-bottom: 0; }
+
+.result hr {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  margin: 14px 0;
+}
+
+/* ── Result action buttons (Print / Save as Image) ─────────── */
+.result-action-btn {
+  padding: 9px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  transition: background 0.2s, transform 0.1s;
+  letter-spacing: 0.3px;
+}
+
+.result-action-btn:hover  { background: rgba(237,141,27,0.75); color: #151616; }
+.result-action-btn:active { transform: scale(0.97); }
+.result-action-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ── Additional inputs (manual price) ─────────────────────── */
+.mt-2 { margin-top: 8px !important; }
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .container { padding: 32px 16px 56px; }
+  .container1 { padding: 28px 20px; }
+}
+
+@media (max-width: 480px) {
+  .container h1 { margin-bottom: 24px; }
+}

@@ -1,0 +1,209 @@
+/* ============================================================
+   CartStyles.css — page content only
+   ============================================================ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #151616;
+  background: #f0f0f0;
+  overflow-x: hidden;
+}
+
+body {
+  padding-top: 120px;
+  line-height: 1.4;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ── Cart container ────────────────────────────────────────── */
+.cart-items {
+  max-width: 900px;
+  margin: 48px auto 72px;
+  background: #1e1e1e;
+  border-radius: 20px;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.18);
+  padding: 36px 36px;
+  border: 1px solid #2e2e2e;
+}
+
+.cart-items h2 {
+  font-size: clamp(22px, 4vw, 32px);
+  font-weight: 800;
+  color: #ed8d1b;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #2e2e2e;
+  letter-spacing: -0.3px;
+}
+
+/* ── Empty cart ────────────────────────────────────────────── */
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px;
+  gap: 16px;
+  text-align: center;
+}
+
+.empty-cart p {
+  font-size: clamp(17px, 3vw, 22px);
+  color: #aaa;
+  font-weight: 600;
+}
+
+.empty-cart img {
+  max-width: min(260px, 70vw);
+  height: auto;
+  opacity: 0.7;
+}
+
+.empty-cart a {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #ed8d1b;
+  color: #151616;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.empty-cart a:hover { background: #c97415; color: #151616; }
+
+/* ── Table ─────────────────────────────────────────────────── */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 10px;
+  border: 1px solid #2e2e2e;
+  margin-bottom: 20px;
+}
+
+.table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid #2e2e2e;
+  vertical-align: middle;
+}
+
+.table thead th {
+  background: #ed8d1b;
+  color: #151616;
+  font-weight: 800;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: none;
+}
+
+.table tbody td { color: #d0d0d0; }
+
+.table tfoot th {
+  background: #252525;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.table tbody tr:last-child td { border-bottom: none; }
+
+.table tbody tr:hover td { background: rgba(255,255,255,0.03); }
+
+/* ── Quantity input ────────────────────────────────────────── */
+.table input[type="number"] {
+  width: 64px;
+  padding: 7px 10px;
+  background: #2a2a2a;
+  border: 1.5px solid #3a3a3a;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+}
+
+.table input[type="number"]:focus {
+  outline: none;
+  border-color: #ed8d1b;
+}
+
+/* ── Checkbox ──────────────────────────────────────────────── */
+.table input[type="checkbox"] {
+  accent-color: #ed8d1b;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* ── Remove button ─────────────────────────────────────────── */
+.remove-btn {
+  display: inline-block;
+  padding: 6px 14px;
+  background: #d9534f !important;
+  color: #fff !important;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.remove-btn:hover { background: #b52b27 !important; }
+
+/* ── Action buttons ────────────────────────────────────────── */
+.btn-primary {
+  padding: 11px 24px;
+  background: #2a2a2a;
+  color: #fff;
+  border: 1.5px solid #3a3a3a;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover { background: #333; }
+
+.checkout-btn {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 11px 28px !important;
+  background: #ed8d1b !important;
+  color: #151616 !important;
+  border: 1px solid #000 !important;
+  border-radius: 10px !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.checkout-btn:hover { background: #c97415 !important; }
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .cart-items { margin: 28px 16px 56px; padding: 24px 18px; }
+  .checkout-btn { margin-left: 0; margin-top: 10px; display: block; width: 100%; text-align: center; }
+  .btn-primary { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .cart-items { padding: 18px 14px; }
+}

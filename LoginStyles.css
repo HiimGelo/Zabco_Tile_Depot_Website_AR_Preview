@@ -1,0 +1,21 @@
+/*
+ * LoginStyles.css — Updated to match Zabco Tile Depot dark theme.
+ * Most styles are now embedded directly in Login_Signup.php.
+ * This file is kept for backwards compatibility only.
+ *
+ * If you are linking this file from Login_Signup.php via <link rel="stylesheet">,
+ * you may safely remove that link since all styles are in the PHP file.
+ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: #111214;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+}

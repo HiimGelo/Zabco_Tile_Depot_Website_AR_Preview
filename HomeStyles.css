@@ -1,0 +1,1059 @@
+/* filepath: c:\Capstone\Tile Website\TileCalculatorStyles.css */
+/* ...existing code... */
+
+/* Header / Nav */
+
+
+/* ========== Responsive improvements below ========== */
+
+/* Reset / base (unchanged header above) */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+li, ul, a {
+  position: relative;
+  font-weight: 500;
+  font-size: 20px;
+  color: #151616;
+  text-decoration: none;
+}
+
+/* Keep header block untouched (per request) */
+
+/* Layout & page flow adjustments (make content scroll naturally under fixed header) */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #151616;
+  background: #f6f6f6;
+}
+
+/* Reserve space for fixed header; use calc so small header height changes still work */
+body {
+  padding-top: 120px; /* keep same as before but ensures scrolling works */
+  line-height: 1.4;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+
+.container {
+  padding: 0;           /* Remove side padding */
+  width: 100%;          /* Ensure it spans the full width */
+  max-width: 100vw;     /* Prevent horizontal overflow */
+  margin: 0;
+  margin-bottom: 50px;
+}
+
+.slider-wrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;    /* Important for pseudo-element positioning */
+}
+
+.slider {
+  display: flex;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;    /* Prevent scrollbar *inside* the slider */
+  border: none;
+  margin-bottom: 0;
+  height: 60vh;         /* Adjusted height for a more cinematic feel */
+  width: 100%;
+  position: relative;   /* For absolute children and pseudo-elements */
+}
+
+/* --- The Dark Tint/Overlay (pseudo-element) --- */
+.slider::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Creates a subtle dark gradient from top to bottom */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 100%);
+  z-index: 1;           /* Place it *over* the image but *under* the text */
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slider img {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* Crops the image to fill the space without distortion */
+  position: relative;   /* Ensure it stays below the tint */
+  z-index: 0;
+}
+
+/* --- New Styles for the Overlay Content (Text and Button) --- */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centered both horizontally and vertically */
+  text-align: center;
+  z-index: 2;           /* Place it on top of the dark tint */
+  width: 90%;           /* Max width relative to the slider, with padding */
+  max-width: 900px;
+  color: #fff;          /* Text color is now white for readability */
+}
+
+.hero-title {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #ed8d1b; /* Your accent color */
+  color: #fff;          /* Dark text for the button */
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.hero-button:hover {
+  background-color: #c27416; /* A slightly darker shade for hover effect */
+}
+
+.header-border {
+  display: flex;
+  width: 100%;
+  background-color: transparent;
+  padding-bottom: 2px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header-border a {
+  display: inline;
+  background-color: transparent;
+  text-decoration: none;
+  font-weight: bold;
+  color: #333333;
+  font-size: 32px;
+  transition: all 0.3s ease 0s;
+}
+
+.header-border a:hover {
+  color: #ed8d1b;
+  transition: all 0.3s ease 0s;
+}
+
+.header-border #see-more {
+  font-size: 20px;
+}
+
+.items ul, li, a, p, h2{
+  background-color: transparent;
+  list-style: none;
+}
+
+.card-list .card-item .card-link{
+  width: 255px;
+  max-width: 100%;
+  display: block;
+  background-color: #333333;
+  padding: 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 2px solid transparent;
+  box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+  transition: 0.2s ease;
+  box-sizing: border-box;
+}
+
+.card-list .card-item .card-link:hover{
+  border-color:#151616;
+  transform: scale(103%);
+  box-shadow: 0px 0px 10px 4px #ed8d1ba6;
+}
+
+.card-list .card-item .card-image{
+  width: calc(100% + 38px);
+  height: auto;
+  aspect-ratio: 16 / 9;
+  margin-top:-19px;
+  margin-left: -19px;
+  object-fit:fill;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.card-list .card-item .badge{
+  color: #000000;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 16px 0 18px;
+  background-color:#ed8d1b;
+  width: fit-content;
+  border-radius: 50px;
+}
+
+.card-list .card-item .card-title{
+  font-size: 1.19rem;
+  color:#ffffff;
+  font-weight: 600;
+}
+
+.items{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 100px;
+    overflow-x: hidden;
+    padding: 40px;
+    justify-content: center;
+    align-items: flex-start;
+}
+.card-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+}
+
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 0;
+    margin: 0 50px;
+    list-style: none;
+    max-width: 1300px;
+    width: 100%;
+}
+
+.card-item {
+    width: 260px;
+    max-width: 100%;
+}
+
+.items2{
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    overflow-x: none;
+    padding: 20px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.items2 .card-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* spacing between cards */
+    padding: 0;
+    margin: 0 10vh;
+    list-style: none;
+    max-width: 1300px; /* prevents cards from going too wide */
+    background-color: transparent;
+}
+
+.items2 .card-item{
+  width: auto;
+}
+
+.container1{
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* space between text & image */
+  align-items: center;
+  background-color: #dddddd;
+  width: 100%;
+  padding: 50px 20px 50px 20px;
+  gap: 50px;
+}
+
+.wrapper{
+  width: 50%;/* adjust size of text column */
+  text-align: right; 
+  background-color: #dddddd;
+}
+
+.wrapper h3, .wrapper p{
+  background-color: #dddddd;
+  text-align: right;
+  padding-left: 23vh;
+}
+.orange-text{
+  color: #ed8d1b;
+}
+
+.wrapper h3{
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.wrapper p{
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.wrapper2 {
+  width: 40%;   /* image section */
+  background-color: #dddddd;
+}
+
+.wrapper button{
+  text-transform: uppercase;
+  padding: 10px 20px 10px 20px;
+  background-color: #ed8d1b;
+  border-radius: 4px;
+  border-color: transparent;
+  transition: all 0.2s ease-in-out 0s;
+}
+
+.wrapper button:hover{
+transition: all 0.2s ease-in-out 0s;
+background-color: #c27416;
+}
+
+.wrapper button:active{
+  transform: scale(0.95);
+  transition: all 0.2s ease-in-out 0s;
+}
+
+.wrapper button a{
+font-size: 22px;
+font-weight: 700;
+color: #ffffff;
+}
+
+.wrapper2{
+  margin-right: 0;
+}
+
+.wrapper2 img{
+  border: 5px solid #151616;
+  box-shadow: 3px 4px 10px 4px #15161697;
+  height: auto;
+  width: 100%;
+  max-width: 500px;
+}
+
+.container2{
+  text-align: center;
+  background-color: #dddddd;
+  width: 99.2vw;
+  padding: 20px;
+  font-size: 52px;
+}
+
+.container2 span{
+  background-color: #dddddd;
+}
+
+.review{
+  background-color: #dddddd;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.review p{
+  margin-left: clamp(1rem, 10vw, 300px);
+  margin-right: clamp(1rem, 10vw, 300px);
+  text-align: center;
+  font-size: 40px;
+
+}
+
+.review h4, .review strong{
+  font-size: 35px;
+  background-color: #dddddd;
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+
+.services{
+  text-align: center;
+  width: 99.2vw;
+  padding: 20px;
+  font-size: 52px;
+  font-weight: 700;
+}
+
+.services .card-wrapper .card-link{
+  width: 350px;
+  max-width: 100%;
+  border: 3px solid #151616;
+  pointer-events: none;
+  cursor: none;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.services .card-list .card-item .card-link{
+  display: block;
+  background-color: #333333;
+  padding: 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.services .card-list .card-item .card-image{
+    aspect-ratio: 16 / 9;
+    object-fit: fill;
+    width: calc(100% + 36px);
+    max-width: calc(100% + 36px);
+    height: auto;
+    margin-top: -18px;
+    margin-left: -18px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.services .card-list .card-item .badge{
+  color: #ffffff;
+  padding: 8px 16px;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 16px 0px 0px;
+  background-color:#ed8d1b;
+  width:fit-content;
+  border-radius: 4px;
+}
+
+/* Footer */
+.footer {
+  background-color: #ed8d1b;
+  width: 100%;
+  border-top: 2px solid #000;
+  padding: 40px 60px 20px 60px;
+  box-sizing: border-box;
+}
+
+.footerArea {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.description p, .contactInfo p{
+  margin-left: 0;
+}
+
+/* Force each footer column to be a top-aligned flex column and remove stray top spacing */
+.footerArea {
+  align-items: flex-start !important;
+  gap: 2.5rem;
+}
+.footerArea > * {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Ensure headings/lists/paragraphs inside sections don't add top space */
+.footerArea h4, .footerArea p, .footerArea ul, .footerArea .contactInfo {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Keep contact column anchored at same baseline */
+.footerArea .section4 {
+  align-self: flex-start !important;
+}
+
+/* Footer columns: prefer desktop proportions but allow shrink */
+.section1 { flex: 0 1 28%; min-width: 180px; max-width: 200px; }
+.section2 { flex: 0 1 18%; min-width: 140px; max-width: 260px; }
+.section3 { flex: 0 1 14%; min-width: 120px; max-width: 220px; }
+.section4 { flex: 0 1 22%; min-width: 160px; max-width: 300px; }
+
+/* Footer logo responsive */
+.footerLogo img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto 12px auto;
+}
+
+/* Link groups layout */
+.sec2-links, .categoryLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Contact info & social icons */
+.contactInfo { display:flex; flex-direction:column; gap:8px; align-items:flex-start; }
+.social-media-icons { display:flex; gap:10px; align-items:center; }
+
+/* Smaller desktop / tablet adjustments */
+@media (max-width: 992px) {
+  .footer { padding: 36px 40px; }
+  .footerArea { gap: 2rem; }
+  .section1 { flex: 0 1 40%; }
+  .section2, .section3, .section4 { flex: 0 1 18%; min-width: 140px; }
+  .sec2-links, .categoryLinks { gap:6px; }
+}
+
+/* Mobile: stack vertically and center content */
+@media (max-width: 768px) {
+  .footer {
+    padding: 28px 22px;
+  }
+  .footerArea {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+  }
+
+  .section1, .section2, .section3, .section4, .description {
+    width: 100%;
+    max-width: 720px;
+    text-align: center;
+    padding: 0 6px;
+  }
+
+  .sec2-links, .categoryLinks {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 14px;
+  }
+
+  .section2 a, .section3 a, .section4 a {
+    display: inline-block;
+    margin: 6px 8px;
+  }
+
+  .footerLogo img { max-width: 120px; }
+
+  .contactInfo { align-items:center; text-align:center; }
+  .social-media-icons { justify-content:center; }
+}
+
+
+/* Fix footer layout: ensure aboutSection participates in the flex layout
+   and doesn't stretch full width, keep columns aligned on desktop. */
+.aboutSection {
+  flex: 0 1 36%;
+  min-width: 220px;
+  max-width: 520px;
+  box-sizing: border-box;
+  padding-right: 8px;
+}
+
+.description {
+  margin: 0;
+}
+
+.description p {
+  margin-top: 8px;
+  line-height: 1.6;
+  max-width: 520px;
+  color: #151616;
+}
+
+/* Footer: left on desktop, centered on smaller windows; slightly smaller desktop type */
+@media (min-width: 993px) {
+  .footerArea .section1,
+  .footerArea .aboutSection,
+  .footerArea .section2,
+  .footerArea .section3,
+  .footerArea .section4 {
+    text-align: left !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+  }
+
+  .footerArea .aboutSection{
+    flex: 0 1 20% !important;
+  }
+
+  .footerArea .aboutSection .description{
+    width: 250px;
+  }
+
+  .footerArea h4 {
+    font-size: 16px !important;   /* a bit smaller on desktop */
+    margin-bottom: 10px;
+  }
+
+  .footerArea a {
+    font-size: 14px !important;   /* slightly smaller link text on desktop */
+    line-height: 1.4;
+  }
+
+  .footerArea p {
+    font-size: 13.5px !important;
+    line-height: 1.6;
+  }
+
+  .footerLogo img {
+    max-width: 120px !important; /* slightly reduce logo on desktop */
+  }
+}
+
+/* Keep footer centered on narrower windows */
+@media (max-width: 992px) {
+  .footerArea .section1,
+  .footerArea .aboutSection,
+  .footerArea .section2,
+  .footerArea .section3,
+  .footerArea .section4 {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .footerArea h4 {
+    font-size: 18px !important;
+  }
+
+  .footerArea a {
+    font-size: 15px !important;
+  }
+
+  .footerArea p {
+    font-size: 14px !important;
+  }
+
+  .footerLogo img {
+    max-width: 110px !important;
+  }
+}
+
+/* Ensure footer text/links keep the footer background (no white boxes) */
+.footerArea p,
+.footerArea a,
+.footerArea h4 {
+  background: transparent !important;
+  color: inherit !important;
+}
+
+/* Constrain social icons to a sensible size (desktop + mobile breakpoint) */
+.social-media-icons img,
+.social-media-icons a img,
+#fblogo, #iglogo, #tiktoklogo {
+  width: 36px !important;
+  height: 36px !important;
+  object-fit: contain;
+  display: inline-block;
+}
+
+/* Slightly smaller icons on very small screens */
+@media (max-width: 480px) {
+  .social-media-icons img,
+  .social-media-icons a img,
+  #fblogo, #iglogo, #tiktoklogo {
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
+
+/* quick fix: keep all footer columns aligned to the top and remove extra top spacing */
+.footerArea > * {
+  align-self: flex-start !important; /* ensure every column sits at the same top baseline */
+}
+
+/* remove any accidental top margin/padding that can push contact details down */
+.section4, .contactInfo, .footerArea .section4 h4, .footerArea .section4 p, .footerArea .section4 ul {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* ensure footer logo doesn't introduce extra height on the left column */
+.footerLogo,
+.footerLogo img {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block;
+  max-width: 120px;
+  height: auto;
+}
+
+/* keep headings compact so they don't offset column tops */
+.footerArea h4 {
+  margin-top: 0 !important;
+  margin-bottom: 8px !important;
+}
+
+/* restore centered behavior on smaller screens */
+@media (max-width: 992px) {
+  .footerArea > * { align-self: center !important; text-align: center !important; }
+  .footerLogo img { margin: 0 auto 12px !important; }
+}
+
+
+
+/* 1) Base hamburger (stacked bars) */
+.nav-toggle{
+  display: none;              /* Shown only under 992px */
+  width: 42px;
+  height: 42px;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  background: #333333;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex-direction: column;     /* stack bars */
+}
+
+.nav-toggle .bar{
+  width: 24px; height: 3px;
+  background: #ffffff !important;
+  border-radius: 2px;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+/* This animates the three bars into an X when header has .nav-open */
+.nav-open .nav-toggle .bar:nth-child(1){ transform: translateY(8px) rotate(50deg); }
+.nav-open .nav-toggle .bar:nth-child(2){ opacity: 0; }
+.nav-open .nav-toggle .bar:nth-child(3){ transform: translateY(-8px) rotate(-50deg); }
+
+
+
+.nav-open .nav-toggle .bar{
+  background-color: #ffffff !important;
+}
+
+
+/* Mobile behaviour: hide list by default; show the orange panel when nav-open */
+@media (max-width: 992px){
+  .nav-toggle{ display: inline-flex; }
+  .navbar > ul{ display: none; }
+  header.nav-open .navbar > ul{
+    display: flex !important;
+    width: 220px !important;
+    max-height: 70vh; overflow-y: auto;
+    flex-direction: column; gap: 6px;
+    margin: 0; padding: 8px 0;
+    background: #333333 !important;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.18) !important;
+    border-radius: 10px !important;
+    border: 1px solid #000 !important;
+    text-align: center; z-index: 1400 !important;
+  }
+  header.nav-open .navbar > ul li{ padding: 10px 12px; border-radius: 6px; }
+  header.nav-open .navbar > ul li a{ display:block; padding:6px 8px; }
+}
+
+
+
+
+
+@media (max-width: 992px){
+  /* Show hamburger, hide horizontal nav list */
+  .nav-toggle{ display: inline-flex; }
+  .navbar > ul{ display: none; }
+
+  /* Reveal the vertical panel when header has .nav-open */
+  header.nav-open .navbar > ul{
+    display: flex !important;
+    width: 220px !important;
+    max-height: 70vh;
+    overflow-y: auto;
+    flex-direction: column;
+    gap: 6px;
+    margin: 0;
+    padding: 8px 0;
+    background: #333333 !important;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.18) !important;
+    border-radius: 10px !important;
+    z-index: 1400 !important;
+    list-style: none;
+    border: 1px solid #000 !important;
+    text-align: center;
+  }
+
+  /* Optional: tidy list items in the panel */
+  header.nav-open .navbar > ul li{ padding: 10px 12px; border-radius: 6px; }
+  header.nav-open .navbar > ul li a{ display: block; padding: 6px 8px; }
+}
+
+
+@media (min-width: 993px){
+  .navbar > ul{
+    display: flex !important; 
+    flex-direction: row !important;
+    position: static !important;
+    background: transparent !important;
+    box-shadow: none !important; 
+    border: none !important;
+  }
+  .nav-toggle{ display: none; }
+}
+
+/* =====================================================
+   FULLY RESPONSIVE — layout overrides
+   ===================================================== */
+
+/* --- wrapper text column: remove large left padding on anything below desktop --- */
+@media (max-width: 1200px) {
+  .wrapper h3, .wrapper p {
+    padding-left: 4vw;
+  }
+  .wrapper2 {
+    margin-right: 0;
+  }
+}
+
+/* --- About section: stack vertically on tablet and below --- */
+@media (max-width: 900px) {
+  .container1 {
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 40px 24px !important;
+    gap: 32px !important;
+  }
+  .wrapper {
+    width: 100% !important;
+    text-align: center !important;
+  }
+  .wrapper h3, .wrapper p {
+    text-align: center !important;
+    padding-left: 0 !important;
+  }
+  .wrapper2 {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin-right: 0 !important;
+  }
+  .wrapper2 img {
+    max-width: min(420px, 88vw) !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  .wrapper h3 {
+    font-size: clamp(2rem, 6vw, 60px) !important;
+  }
+  .wrapper p {
+    font-size: clamp(1.1rem, 3vw, 30px) !important;
+  }
+}
+
+/* --- Header-border: prevent overflow on small screens --- */
+@media (max-width: 600px) {
+  .header-border {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .header-border a {
+    font-size: clamp(18px, 5vw, 32px) !important;
+  }
+  .header-border #see-more {
+    font-size: clamp(14px, 3.5vw, 20px) !important;
+  }
+}
+
+/* --- Category cards: allow full-width single column on mobile --- */
+@media (max-width: 600px) {
+  .card-list .card-item .card-link {
+    width: min(255px, 82vw) !important;
+  }
+  .card-list .card-item .card-image {
+    width: calc(min(255px, 82vw) + 2px) !important;
+    height: auto !important;
+    margin-left: 0px;
+  }
+}
+
+/* --- Container2 (section headings): fix width unit --- */
+.container2 {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+.services {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* --- Facebook iframes: scale inside their container --- */
+.review {
+  flex-wrap: wrap !important;
+  gap: 20px !important;
+  padding: 20px !important;
+}
+.review iframe {
+  max-width: 100% !important;
+  width: min(500px, 90vw) !important;
+  flex-shrink: 1 !important;
+}
+
+/* --- Services card-link: fluid width on smaller viewports --- */
+@media (max-width: 768px) {
+  .services .card-wrapper .card-link {
+    width: min(350px, 90vw) !important;
+  }
+  .services .card-list .card-item .card-image {
+    width: calc(min(350px, 90vw) + 2px) !important;
+  }
+}
+
+/* --- Review section font sizes --- */
+@media (max-width: 768px) {
+  .container2 {
+    font-size: clamp(28px, 6vw, 52px) !important;
+  }
+  .review p {
+    font-size: clamp(18px, 4vw, 40px) !important;
+  }
+  .review h4, .review strong {
+    font-size: clamp(18px, 4vw, 35px) !important;
+  }
+}
+
+/* --- Slider height: shorter on mobile so it doesn't dominate --- */
+@media (max-width: 600px) {
+  .slider {
+    height: 42vh !important;
+  }
+}
+@media (max-width: 400px) {
+  .slider {
+    height: 36vh !important;
+  }
+}
+
+/* --- Services heading decorators: prevent wrapping overflow --- */
+@media (max-width: 480px) {
+  .services {
+    font-size: clamp(24px, 6vw, 52px) !important;
+    padding: 12px 8px !important;
+  }
+}
+
+/* --- items2 cards: reset scale on mobile to avoid clipping --- */
+@media (max-width: 500px) {
+  .items2 .card-wrapper {
+    transform: none !important;
+  }
+  .items2 .card-list {
+    margin: 0 !important;
+  }
+}
+
+/* =====================================================
+   CARD RESPONSIVENESS — mobile fix
+   ===================================================== */
+
+/* On mobile, let each card fill the available width of its row */
+@media (max-width: 600px) {
+  /* .items wraps its card-wrappers; give each one breathing room */
+  .items {
+    padding: 20px 16px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .card-wrapper {
+    width: 100% !important;
+    max-width: 340px !important;
+  }
+  .card-list {
+    margin: 0 !important;
+    width: 100% !important;
+    gap: 16px !important;
+  }
+  .card-item {
+    width: 100% !important;
+  }
+  /* card-link fills the card-item, image fills the card-link */
+  .card-list .card-item .card-link {
+    width: 100% !important;
+  }
+  .card-list .card-item .card-image {
+    width: calc(100% + 38px) !important;
+    height: auto !important;
+  }
+
+  /* Services section same treatment */
+  .items2 {
+    padding: 12px 16px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .items2 .card-list {
+    margin: 0 !important;
+    width: 100% !important;
+    gap: 16px !important;
+  }
+  .items2 .card-item {
+    width: 100% !important;
+  }
+  .services .card-wrapper {
+    width: 100% !important;
+    max-width: 380px !important;
+  }
+  .services .card-wrapper .card-link,
+  .services .card-list .card-item .card-link {
+    width: 100% !important;
+  }
+  .services .card-list .card-item .card-image {
+    width: calc(100% + 36px) !important;
+    height: auto !important;
+    margin-left: 0px !important;
+  }
+}
+
+/* Tablet: allow two cards side-by-side if room exists */
+@media (min-width: 601px) and (max-width: 900px) {
+  .card-wrapper {
+    max-width: 280px;
+  }
+  .card-list {
+    margin: 0 16px;
+    gap: 20px;
+  }
+  .card-item {
+    width: 100%;
+  }
+  .card-list .card-item .card-link {
+    width: 100%;
+  }
+  .card-list .card-item .card-image {
+    width: calc(100% + 38px);
+    height: auto;
+  }
+  .services .card-wrapper {
+    max-width: 320px;
+  }
+  .services .card-list .card-item .card-link {
+    width: 100%;
+  }
+  .services .card-list .card-item .card-image {
+    width: calc(100% + 36px);
+    height: auto;
+  }
+}

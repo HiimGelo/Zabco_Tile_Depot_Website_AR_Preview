@@ -1,0 +1,192 @@
+/* ============================================================
+   ContactUsStyles.css — page content only
+   ============================================================ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #151616;
+  background: #f0f0f0;
+  overflow-x: hidden;
+}
+
+body {
+  padding-top: 120px;
+  line-height: 1.4;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ── Hero heading ──────────────────────────────────────────── */
+.wrapper {
+  text-align: center;
+  padding: 44px 28px 0;
+}
+
+.wrapper h1 {
+  font-size: clamp(28px, 6vw, 52px);
+  font-weight: 800;
+  color: #151616;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.wrapper p {
+  font-size: clamp(15px, 2vw, 18px);
+  color: #555;
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+/* ── Two-column contact section ────────────────────────────── */
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* ── Form card ─────────────────────────────────────────────── */
+.wrapper-2 {
+  flex: 1 1 380px;
+  max-width: 500px;
+  background: #1e1e1e;
+  border-radius: 18px;
+  padding: 36px 32px;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.18);
+  border: 1px solid #2e2e2e;
+}
+
+.wrapper-2 h3 {
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 28px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid #ed8d1b;
+}
+
+/* Field list */
+.gform-fields,
+.gform-name,
+.gform-Email,
+.gform-contactNumber,
+.gform-Message {
+  background-color: transparent;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.gform-fields li {
+  color: #ccc;
+  margin-bottom: 18px;
+}
+
+.gform-fields label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 6px;
+}
+
+.gform-fields input[type="text"],
+.gform-fields textarea {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 15px;
+  background: #2a2a2a;
+  border: 1.5px solid #3a3a3a;
+  border-radius: 8px;
+  color: #fff;
+  font-family: inherit;
+  transition: border-color 0.2s;
+  resize: none;
+}
+
+.gform-fields input[type="text"]:focus,
+.gform-fields textarea:focus {
+  outline: none;
+  border-color: #ed8d1b;
+  background: #2f2f2f;
+}
+
+.gform-fields textarea { height: 120px; }
+
+/* Submit */
+.submit { margin-top: 8px; }
+
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  background: #ed8d1b;
+  color: #151616;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  letter-spacing: 0.3px;
+}
+
+.submit-button:hover { background: #c97415; }
+.submit-button:active { transform: scale(0.98); }
+
+/* ── Map side image ────────────────────────────────────────── */
+.wrapper-3 {
+  flex: 1 1 340px;
+  max-width: 480px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.wrapper-3 img {
+  width: 100%;
+  height: auto;
+  max-height: 460px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 2px solid #1e1e1e;
+  box-shadow: 0 8px 28px rgba(237,141,27,0.22);
+}
+
+/* ── Map / iframe wrapper ──────────────────────────────────── */
+.map-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 60px;
+  padding: 0 28px;
+  box-sizing: border-box;
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 420px;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.2);
+  border: 2px solid #1e1e1e;
+  margin: 0;
+  display: block;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .wrapper { padding: 32px 16px 0; }
+  .contact-section { padding: 28px 16px; gap: 24px; }
+  .wrapper-2 { padding: 24px 20px; }
+  .map-wrapper { padding: 0 16px; }
+  .map-wrapper iframe { height: 300px; }
+}
+
+@media (max-width: 480px) {
+  .wrapper-3 { max-width: 100%; }
+  .map-wrapper iframe { height: 240px; }
+}

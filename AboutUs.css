@@ -1,0 +1,114 @@
+/* ============================================================
+   AboutUs.css — page content only (header/footer handled by shared files)
+   ============================================================ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #151616;
+  background: #f0f0f0;
+  overflow-x: hidden;
+}
+
+body {
+  padding-top: 120px;
+  line-height: 1.4;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ── Page wrapper ──────────────────────────────────────────── */
+.about-wrapper {
+  padding: 48px 28px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Section title ─────────────────────────────────────────── */
+.about-us-wrapper h1 {
+  font-size: clamp(26px, 5vw, 48px);
+  text-align: center;
+  color: #151616;
+  font-weight: 800;
+  margin-bottom: 36px;
+  letter-spacing: -0.5px;
+}
+
+/* ── Info card ─────────────────────────────────────────────── */
+.info-wrapper {
+  text-align: center;
+  background: #1e1e1e;
+  color: #d8d8d8;
+  padding: 44px 40px;
+  border-radius: 18px;
+  max-width: 860px;
+  margin: 0 auto 52px;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.18);
+  border: 1px solid #2e2e2e;
+}
+
+.info-wrapper p {
+  font-size: clamp(15px, 2vw, 17px);
+  line-height: 1.85;
+  margin-bottom: 18px;
+}
+
+.info-wrapper p:last-child { margin-bottom: 0; }
+
+.info-wrapper p br { display: none; } /* let text wrap naturally */
+
+/* ── Gallery strip ─────────────────────────────────────────── */
+.image-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  gap: 18px;
+  margin: 0 auto 64px;
+  padding: 0 8px;
+  flex-wrap: wrap;
+}
+
+.img1-wrapper,
+.img2-wrapper,
+.img3-wrapper,
+.img4-wrapper {
+  border: 3px solid #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(237,141,27,0.22);
+  pointer-events: none;
+  cursor: none;
+  flex: 1 1 220px;
+  max-width: 340px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .img1-wrapper, .img2-wrapper,
+  .img3-wrapper, .img4-wrapper { max-width: 280px; }
+  .image-wrapper img { height: 200px; }
+}
+
+@media (max-width: 680px) {
+  .about-wrapper { padding: 32px 16px 0; }
+  .info-wrapper { padding: 28px 20px; }
+  .image-wrapper { gap: 12px; }
+  .img1-wrapper, .img2-wrapper,
+  .img3-wrapper, .img4-wrapper { flex: 1 1 140px; max-width: 48%; }
+  .image-wrapper img { height: 160px; }
+}
+
+@media (max-width: 420px) {
+  .img1-wrapper, .img2-wrapper,
+  .img3-wrapper, .img4-wrapper { flex: 1 1 120px; max-width: 47%; }
+  .image-wrapper img { height: 130px; }
+}

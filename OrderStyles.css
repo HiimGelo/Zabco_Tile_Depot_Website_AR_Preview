@@ -1,0 +1,163 @@
+/* ============================================================
+   OrderStyles.css — page content only
+   ============================================================ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #151616;
+  background: #f0f0f0;
+  overflow-x: hidden;
+}
+
+body {
+  padding-top: 120px;
+  line-height: 1.4;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ── Page wrapper ──────────────────────────────────────────── */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 28px 72px;
+}
+
+/* ── Flash message ─────────────────────────────────────────── */
+.success-msg {
+  background: #1a3320;
+  color: #6fdf6f;
+  border: 1px solid #2e5e3e;
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* ── Empty orders state ────────────────────────────────────── */
+.header-border {
+  background: #1e1e1e;
+  border-radius: 20px;
+  padding: 40px 36px !important;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.18);
+  border: 1px solid #2e2e2e;
+}
+
+.header-border:has(> p:only-of-type) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  gap: 20px;
+  text-align: center;
+}
+
+.header-border > p {
+  font-size: clamp(16px, 3vw, 22px);
+  font-weight: 700;
+  color: #ed8d1b;
+}
+
+.header-border > img { max-width: 180px; opacity: 0.7; }
+
+.header-border > a {
+  display: inline-block;
+  padding: 11px 26px;
+  background: #ed8d1b;
+  color: #151616;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.header-border > a:hover { background: #c97415; }
+
+/* ── Orders table card ─────────────────────────────────────── */
+.header-border h2 {
+  font-size: clamp(20px, 4vw, 30px);
+  font-weight: 800;
+  color: #ed8d1b;
+  text-align: center;
+  margin-bottom: 24px;
+  letter-spacing: -0.3px;
+}
+
+/* ── Table wrapper ─────────────────────────────────────────── */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 10px;
+  border: 1px solid #2e2e2e;
+}
+
+/* ── Orders table ──────────────────────────────────────────── */
+.table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  background: #1e1e1e !important;
+}
+
+.table th,
+.table td {
+  padding: 12px 14px;
+  font-size: 14px;
+  text-align: center;
+  border-bottom: 1px solid #2e2e2e;
+  vertical-align: middle;
+}
+
+.table thead th {
+  background: #ed8d1b !important;
+  color: #151616 !important;
+  font-weight: 800;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: none;
+}
+
+.table tbody td { color: #d0d0d0; }
+
+.table tbody tr:last-child td { border-bottom: none; }
+
+.table tbody tr:hover td { background: rgba(255,255,255,0.03); }
+
+/* ── Cancel button ─────────────────────────────────────────── */
+.cancel-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  background: #d9534f !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+  margin: 2px;
+  white-space: nowrap;
+}
+
+.cancel-btn:hover { background: #b52b27 !important; }
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  main { padding: 28px 16px 56px; }
+  .header-border { padding: 24px 16px !important; }
+}
+
+@media (max-width: 480px) {
+  .table th, .table td { font-size: 12px; padding: 9px 8px; }
+}

@@ -1,0 +1,112 @@
+/* ============================================================
+   Services.css — page content only
+   ============================================================ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #151616;
+  background: #f0f0f0;
+  overflow-x: hidden;
+}
+
+body {
+  padding-top: 120px;
+  line-height: 1.4;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ── Page wrapper ──────────────────────────────────────────── */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 28px 64px;
+}
+
+/* ── Section title ─────────────────────────────────────────── */
+.services-wrapper {
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+.services-wrapper h1 {
+  font-size: clamp(26px, 5vw, 48px);
+  font-weight: 800;
+  color: #151616;
+  letter-spacing: -0.5px;
+}
+
+/* ── Details row ───────────────────────────────────────────── */
+.details-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  justify-content: center;
+}
+
+/* ── Service card ──────────────────────────────────────────── */
+.sec1-wrapper {
+  flex: 1 1 300px;
+  max-width: 480px;
+}
+
+.tile-estimate-wrapper {
+  background: #1e1e1e;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.18);
+  border: 1px solid #2e2e2e;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.tile-estimate-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(237,141,27,0.22);
+}
+
+/* ── Card label/header ─────────────────────────────────────── */
+.label-wrapper {
+  padding: 22px 24px 18px;
+  border-bottom: 2px solid #2e2e2e;
+}
+
+.label-wrapper h3 {
+  font-size: clamp(16px, 2.5vw, 20px);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+}
+
+/* ── Card image ────────────────────────────────────────────── */
+.image1-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.image1-wrapper img {
+  width: 100%;
+  height: clamp(180px, 28vw, 320px);
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.tile-estimate-wrapper:hover .image1-wrapper img {
+  transform: scale(1.03);
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .container { padding: 32px 16px 48px; }
+  .details-wrapper { gap: 18px; }
+  .sec1-wrapper { flex: 1 1 100%; max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .services-wrapper { margin-bottom: 28px; }
+  .label-wrapper { padding: 16px 18px 14px; }
+  .image1-wrapper img { height: 200px; }
+}
